@@ -1,1 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#050505">
+
+    <title>SHAN AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div id="particles"></div>
+
+    <div class="scanlines"></div>
+
+    <main class="app">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <div class="brand-core">
+                    S
+                </div>
+
+                <div>
+                    <h1>SHAN</h1>
+                    <span>ARTIFICIAL INTELLIGENCE</span>
+                </div>
+
+            </div>
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <span id="status">
+                    SYSTEM READY
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= AI CORE ================= -->
+
+        <section class="core-section">
+
+            <div class="hud-ring ring-1"></div>
+            <div class="hud-ring ring-2"></div>
+            <div class="hud-ring ring-3"></div>
+
+            <div class="core">
+
+                <div class="core-inner">
+
+                    <div class="core-letter">
+                        S
+                    </div>
+
+                    <div class="core-text">
+                        SHAN
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="core-label">
+                <span>AI CORE</span>
+                <strong>ONLINE</strong>
+            </div>
+
+        </section>
+
+
+        <!-- ================= VOICE WAVE ================= -->
+
+        <section class="voice-section">
+
+            <div class="voice-wave" id="wave">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <p id="voiceStatus">
+                SAY "HEY SHAN"
+            </p>
+
+        </section>
+
+
+        <!-- ================= QUICK SYSTEM INFO ================= -->
+
+        <section class="system-grid">
+
+            <div class="system-card">
+
+                <span class="card-title">
+                    TIME
+                </span>
+
+                <strong id="time">
+                    --:--:--
+                </strong>
+
+            </div>
+
+
+            <div class="system-card">
+
+                <span class="card-title">
+                    BATTERY
+                </span>
+
+                <strong id="battery">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="system-card">
+
+                <span class="card-title">
+                    NETWORK
+                </span>
+
+                <strong id="network">
+                    ONLINE
+                </strong>
+
+            </div>
+
+
+            <div class="system-card">
+
+                <span class="card-title">
+                    CORE
+                </span>
+
+                <strong>
+                    SHAN-X1
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHAT ================= -->
+
+        <section class="chat-container">
+
+            <div class="chat-header">
+
+                <span>SHAN COMMUNICATION LINK</span>
+
+                <button
+                    id="clearChat"
+                    class="small-btn"
+                >
+                    CLEAR
+                </button>
+
+            </div>
+
+
+            <div
+                id="chat"
+                class="chat"
+            >
+
+                <div class="message shan-message">
+
+                    <div class="message-tag">
+                        SHAN
+                    </div>
+
+                    <p>
+                        System initialized.
+                        All core systems are online.
+                        How may I assist you?
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMMAND INPUT ================= -->
+
+        <section class="command-panel">
+
+            <div class="input-wrapper">
+
+                <input
+                    type="text"
+                    id="input"
+                    autocomplete="off"
+                    placeholder="ENTER COMMAND..."
+                >
+
+                <button
+                    id="mic"
+                    class="control-btn mic-btn"
+                    aria-label="Voice input"
+                >
+                    🎙
+                </button>
+
+                <button
+                    id="send"
+                    class="control-btn send-btn"
+                    aria-label="Send command"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+
+            <div class="command-hint">
+
+                <span>VOICE</span>
+                <span>TEXT</span>
+                <span>AI</span>
+                <span>SYSTEM</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK COMMANDS ================= -->
+
+        <section class="quick-commands">
+
+            <button onclick="quickCommand('What time is it?')">
+                TIME
+            </button>
+
+            <button onclick="quickCommand('Open Google')">
+                GOOGLE
+            </button>
+
+            <button onclick="quickCommand('Open YouTube')">
+                YOUTUBE
+            </button>
+
+            <button onclick="quickCommand('Open WhatsApp')">
+                WHATSAPP
+            </button>
+
+            <button onclick="quickCommand('Tell me a joke')">
+                JOKE
+            </button>
+
+            <button onclick="quickCommand('Who are you?')">
+                ABOUT SHAN
+            </button>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <span>
+                SHAN AI SYSTEM
+            </span>
+
+            <span>
+                v1.0
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="voice.js"></script>
+    <script src="ai.js"></script>
+    <script src="camera.js"></script>
+    <script src="weather.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
